@@ -24,7 +24,8 @@ async def get_color(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return await prompt_for_logo(update, context)
 ```
 **Logo Embedding:** Supports uploading a custom image to be placed in the center of the QR code.
-<img width="1575" height="714" alt="image" src="https://github.com/user-attachments/assets/1bb23ae4-90df-4005-bc6e-1397e5674623" />
+<img width="1573" height="838" alt="image" src="https://github.com/user-attachments/assets/5f722366-af82-48be-b2c2-d2a807cff1f0" />
+
 ```
 ### handlers.py
 
