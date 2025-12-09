@@ -1,5 +1,3 @@
-# handlers.py
-
 import io
 import logging
 import re
@@ -18,7 +16,7 @@ from config import (
 
 logger = logging.getLogger(__name__)
 
-# --- 🛠️ Helper Function: The Core QR Generator ---
+# --- Helper Function: The Core QR Generator ---
 def create_custom_qr(data: str, fill_color: str = 'black', logo_bytes: bytes | None = None):
     """Generates a fully customized QR code with stable color and an optional logo."""
     
@@ -52,7 +50,7 @@ def create_custom_qr(data: str, fill_color: str = 'black', logo_bytes: bytes | N
     
     return final_buffer
 
-# --- 💬 Navigation Logic ---
+# --- Navigation Logic ---
 
 async def go_back(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Handles the 'Go Back' callback query."""
@@ -99,7 +97,7 @@ async def go_back(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         return ConversationHandler.END
 
 
-# --- 💬 Conversation Handlers ---
+# --- Conversation Handlers ---
 
 async def start_custom_qr(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Starts the conversation and sets up the Reply Keyboard for color selection."""
@@ -269,7 +267,7 @@ async def handle_wrong_input(update: Update, context: ContextTypes.DEFAULT_TYPE)
         
     elif current_state == GET_LOGO:
         
-        # 🚨 FIX 2: Manually catch /skip text and process it if the CommandHandler fails to execute
+        # Manually catch /skip text and process it if the CommandHandler fails to execute
         if update.message.text and update.message.text.lower() == '/skip':
             logger.warning("/skip command bypassed CommandHandler. Running manually.")
             return await skip_logo(update, context)
@@ -319,4 +317,5 @@ async def handle_restart_prompt(update: Update, context: ContextTypes.DEFAULT_TY
     if update.message.text and (update.message.text.lower().startswith('/') or update.message.text.lower() == RESTART_BUTTON_TEXT.lower()):
         return
         
+
     await update.message.reply_text("Do you want to create another QR code? Please press the 'Start New QR' button below.")
