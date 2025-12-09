@@ -24,7 +24,7 @@ def create_custom_qr(data: str, fill_color: str = 'black', logo_bytes: bytes | N
     
     qr = qrcode.QRCode(
         error_correction=qrcode.constants.ERROR_CORRECT_H, 
-        box_size=10, 
+        box_size=100, 
         border=3,    
     )
     qr.add_data(data)
@@ -319,3 +319,4 @@ async def handle_restart_prompt(update: Update, context: ContextTypes.DEFAULT_TY
         
 
     await update.message.reply_text("Do you want to create another QR code? Please press the 'Start New QR' button below.")
+
