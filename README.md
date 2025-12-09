@@ -1,6 +1,15 @@
 # QR generation bot for Telegram messenger
 Telegram bot built on Python that allows users to generate QR codes with multiple design options.
 
+# Required libraries
+
+'''
+python-telegram-bot #Foundational framework
+qrcode #QR code generating engine
+Pillow #Image processing and logo embedding
+numpy #Mathematical operations for fast image processing via Pillow
+'''
+
 This bot was developed for a semestral project at BUT (Brno University of Technology) as part of my programming course.
 ## Features
 **Custom Color Selection:** Users can select from a predefined color palette.
