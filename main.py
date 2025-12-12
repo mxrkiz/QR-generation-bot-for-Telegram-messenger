@@ -53,7 +53,6 @@ def main() -> None:
     application.add_handler(conv_handler)
     
     # --- Persistent Handlers ---
-    # 🚨 FIX: Handler for the INLINE 'Start New QR' button press (CallbackQueryHandler)
     application.add_handler(
         CallbackQueryHandler(handle_new_start, pattern=f"^{re.escape(START_QR_CALLBACK_DATA)}$")
     )
